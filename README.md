@@ -11,11 +11,11 @@
 
  - Once you have installed Caesar-Cipher-Js, import it using the following command:
   ```js
-  import { Caesar } from "caeser-cipher-js/index.js"; 
+  import { Cipher } from "caeser-cipher-js"; 
   ```
  - To use the Cipher functions you can call 'encrypt' or 'decrypt'.
     ``` js
-    const message = Caesar.encrypt("This message will be encrypted.", 4);
+    const message = Cipher.encrypt("This message will be encrypted.", 4);
 
     //OUTPUT: XLMW QIWWEKI AMPP FI IRGVCTXIH.
     ```
@@ -23,7 +23,7 @@
   
  - To decrypt, pass in the decrypted message and the reverse-shift.
     ``` js
-    const message = Caesar.decrypt("XLMW QIWWEKI AMPP FI IRGVCTXIH.", -4); 
+    const message = Cipher.decrypt("XLMW QIWWEKI AMPP FI IRGVCTXIH.", -4); 
 
     // OUTPUT: THIS MESSAGE WILL BE ENCRYPTED
     ```
@@ -31,7 +31,7 @@
  - Alternatively, you can install only the modules that you need.
 
    ```js
-   import { encrypt } from 'caeser-cipher-js/src/encrypt.js'
+   import { encrypt } from 'caeser-cipher-js'
    
    const password = encrypt('myPasswordHere', -6);
    ```

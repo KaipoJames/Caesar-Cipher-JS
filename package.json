@@ -2,14 +2,18 @@
   "name": "caeser-cipher-js",
   "version": "1.0.5",
   "description": "encrypt and decrypt your messages, passwords, etc. to securely send your data wherever you are.",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "src/index.js",
+  "module": "src/index.js",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KaipoJames/Caesar-Cipher-JS.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Kaipo Wilmeth <kaipojames12@gmail.com>",
   "license": "MIT",
-  "homepage": "git clone git@github.com:KaipoJames/Caesar-Cipher-Encrypt-And-Decrypt.git"
+  "homepage": "https://github.com/KaipoJames/Caesar-Cipher-JS.git"
 }
