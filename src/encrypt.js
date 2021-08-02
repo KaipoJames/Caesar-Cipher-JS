@@ -1,6 +1,6 @@
 import { Util } from './cipher.js';
 
-const encrypt = (text, shift) => {
+export const encrypt = (text, shift) => {
     if (!shift || shift === 0) { return text }
     if (!Number.isInteger(shift)) { shift = shift.toUpperCase(); }
     if (shift === 'RANDOM') {
@@ -24,11 +24,7 @@ const encrypt = (text, shift) => {
     return encrypted.join("");
 }
 
-const Encrypt = {
-    encrypt, encrypt
-}
-
 
 //console.log(encrypt("How Many", 5));
 //console.log(encrypt("Where Did You Go Last Night?", -7));
-console.log(encrypt("Hello There", 'rAnDOM'));
+//console.log(encrypt("Hello There", 'rAnDOM'));
