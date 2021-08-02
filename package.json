@@ -2,12 +2,12 @@
   "name": "caeser-cipher-js",
   "version": "1.0.3",
   "description": "encrypt and decrypt your messages, passwords, etc. to securely send your data wherever you are.",
-  "main": "src/index.js",
+  "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Kaipo Wilmeth <kaipojames12@gmail.com>",
-  "license": "ISC"
+  "license": "MIT"
 }
