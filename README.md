@@ -4,7 +4,7 @@
 ![npm](https://img.shields.io/npm/v/caeser-cipher-js?style=for-the-badge)
   
 ## Installation
- - Install with [npm](https://www.npmjs.com/): ``` 'npm install caeser-cipher-js' ```
+ - Install with [npm](https://www.npmjs.com/): ``` npm install caeser-cipher-js ```
  - Clone the repo: ``` git clone git@github.com:KaipoJames/Caesar-Cipher-Encrypt-And-Decrypt.git ```
 
 ## Getting Started
