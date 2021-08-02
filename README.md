@@ -2,6 +2,8 @@
  - A JavaScript Library that allows you to encrypt and/or decrypt your messages, passwords, and other texts. Securely send your data using the algorithms of caeser-cipher-js.
 
 ![npm](https://img.shields.io/npm/v/caeser-cipher-js?style=for-the-badge)
+
+Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/computer-science/caesar-cipher).
   
 ## Installation
  - Install with [npm](https://www.npmjs.com/): ``` npm install caeser-cipher-js ```
@@ -34,6 +36,17 @@
    import { encrypt } from 'caeser-cipher-js'
    
    const password = encrypt('myPasswordHere', -6);
+   ```
+
+ - You can also pass a multi-shift key for a more secure encryption.
+ - NOTE: numbers in a multi-shift key must be separated by commas to work.
+   ```js
+   console.log(encrypt("Don't Forget To Make Sure The Passwords are encrypted!", '3,8,9'));
+   // OUTPUT: GWW'W NXUONW BX PITH ADUM CKM YDABZWAGA JUM NQKABXCHL!
+
+   // TO Decrypt knowing the multi-shift key, pass in the opposite sign you used in the encryption.
+   console.log(decrypt("GWW'W NXUONW BX PITH ADUM CKM YDABZWAGA JUM NQKABXCHL!", '-3,-8,-9'));
+   // OUTPUT: Don't Forget To Make Sure The Passwords are encrypted!
    ```
 
 ## What's Included

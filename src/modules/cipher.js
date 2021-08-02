@@ -4,6 +4,7 @@ const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 // letts.map(l => console.log(letts.indexOf(l)));
 
 const shiftLetter = (letter, shift) => {
+    //console.log("Letter TO Shift: " + letter + " : " + "SHIFT: " + shift);
     const alphabetPos = alphabet.indexOf(letter);
     const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
     const newLetter = alphabet[newPos];
@@ -42,6 +43,21 @@ const decrement = (pos, shift) => {
     return pos;
 }
 
+// For MultiShift
+const getNextShift = (shifts, pos) => {
+    const nextPos = pos + 1;
+    const lastIndex = shifts.length - 1;
+    const firstIndex = 0;
+    if (nextPos > lastIndex) {
+        return shifts[0];
+    }
+    if (nextPos < firstIndex) {
+        return shifts[lastIndex];
+    }
+    //console.log("value: " + shifts[pos]);
+    return shifts[nextPos];
+}
+
 export const Util = {
     alphabet: alphabet,
     shiftLetter: shiftLetter,
@@ -49,5 +65,6 @@ export const Util = {
     isLetter: isLetter,
     isNegative: isNegative,
     increment, increment,
-    decrement, decrement
+    decrement, decrement,
+    getNextShift, getNextShift
 }
