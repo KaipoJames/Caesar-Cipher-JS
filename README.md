@@ -1,5 +1,5 @@
 # Caesar-Cipher-Js
- - A JavaScript Library that allows you to encrypt and/or decrypt your messages, passwords, and other texts. Securely send your data using the algorithms of caeser-cupher-js.
+ - A JavaScript Library that allows you to encrypt and/or decrypt your messages, passwords, and other texts. Securely send your data using the algorithms of caeser-cipher-js.
 
 ![npm](https://img.shields.io/npm/v/caeser-cipher-js?style=for-the-badge)
   
