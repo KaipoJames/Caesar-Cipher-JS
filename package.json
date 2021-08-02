@@ -1,6 +1,6 @@
 {
   "name": "caeser-cipher-js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "encrypt and decrypt your messages, passwords, etc. to securely send your data wherever you are.",
   "main": "src/index.js",
   "type": "module",
