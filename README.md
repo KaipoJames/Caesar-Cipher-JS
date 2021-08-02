@@ -13,17 +13,28 @@
   ```js
   import { Caesar } from "caeser-cipher-js/index.js"; 
   ```
- - Then to use the functions you can call 'encrypt' or 'decrypt'.
-  ``` js
-  const message = Caesar.encrypt("This message will be encrypted.", 4);
-  ```
-   - The value of the message variable will be encrypted with a shift 4 key.
+ - To use the Cipher functions you can call 'encrypt' or 'decrypt'.
+    ``` js
+    const message = Caesar.encrypt("This message will be encrypted.", 4);
+
+    //OUTPUT: XLMW QIWWEKI AMPP FI IRGVCTXIH.
+    ```
+   - The value of the message variable is encrypted with a shift 4 key.
   
  - To decrypt, pass in the decrypted message and the reverse-shift.
     ``` js
     const message = Caesar.decrypt("XLMW QIWWEKI AMPP FI IRGVCTXIH.", -4); 
+
+    // OUTPUT: THIS MESSAGE WILL BE ENCRYPTED
     ```
-   - output: This message will be encrypted.
+
+ - Alternatively, you can install only the modules that you need.
+
+   ```js
+   import { encrypt } from 'caeser-cipher-js/src/encrypt.js'
+   
+   const password = encrypt('myPasswordHere', -6);
+   ```
 
 ## What's Included
     Currently, libraries for encrypting and decrypting and supported using a single key encryption.
