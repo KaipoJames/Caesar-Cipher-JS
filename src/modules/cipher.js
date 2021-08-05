@@ -1,10 +1,6 @@
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-// let letts = alphabet.split("");
-// letts.map(l => console.log(letts.indexOf(l)));
-
 const shiftLetter = (letter, shift) => {
-    //console.log("Letter TO Shift: " + letter + " : " + "SHIFT: " + shift);
     const alphabetPos = alphabet.indexOf(letter);
     const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
     const newLetter = alphabet[newPos];
@@ -13,7 +9,6 @@ const shiftLetter = (letter, shift) => {
 
 const randomShift = (shift) => {
     shift = Math.floor(Math.random() * 100);
-    console.log("Random Shift Chosen: " + shift);
     return shift;
 }
 
@@ -29,17 +24,14 @@ const increment = (pos, shift) => {
         pos++;
         if (pos > 25) { pos = 0; }
     }
-    //console.log("pos: " + pos);
     return pos;
 }
 
 const decrement = (pos, shift) => {
-    //console.log("before change, POS: " + pos + ", SHIFT: " + shift);
     for (let i = 0; i < Math.abs(shift); i++) {
         pos--;
         if (pos < 0) { pos = 25; }
     }
-    //console.log("pos: " + pos);
     return pos;
 }
 
@@ -54,7 +46,6 @@ const getNextShift = (shifts, pos) => {
     if (nextPos < firstIndex) {
         return shifts[lastIndex];
     }
-    //console.log("value: " + shifts[pos]);
     return shifts[nextPos];
 }
 

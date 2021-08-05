@@ -40,18 +40,7 @@ export const encrypt = (text, shift) => {
             }
             encrypted.push(newData.newLetter);
         }
-
     });
 
     return encrypted.join("");
 }
-
-
-// console.log(encrypt("How Many Times?", '7,1,5,3'));
-// console.log(encrypt("Don't Forget To Make Sure The Passwords are encrypted!", '3,8,9'));
-//console.log(encrypt("How Many", 3));
-//console.log(encrypt("Where Did You Go Last Night?", -7));
-//console.log(encrypt("Hello There", 'rAnDOM'));
-
-// MULTI SHIFT EXAMPLE
-// encrypt("Hello There", "2,5,8");

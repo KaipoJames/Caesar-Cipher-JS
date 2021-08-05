@@ -37,9 +37,3 @@ export const decrypt = (text, shift) => {
 
     return decrypted.join("");
 }
-
-
-// console.log(decrypt("OPB PHOD WPNJV?", '-7,-1,-5,-3'));
-// console.log(decrypt("GWW'W NXUONW BX PITH ADUM CKM YDABZWAGA JUM NQKABXCHL!", '-3,-8,-9'));
-// console.log(decrypt("PAXKX WBW RHN ZH ETLM GBZAM?", 7));
-//console.log(decrypt("NKRRU ZNKXK", -6));
