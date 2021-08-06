@@ -44,3 +44,7 @@ export const encrypt = (text, shift) => {
 
     return encrypted.join("");
 }
+
+
+//console.log(encrypt("California Trip", 5));
+console.log(encrypt("California Trip", '2, 4, 3'));
