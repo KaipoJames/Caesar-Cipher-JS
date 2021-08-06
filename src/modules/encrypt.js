@@ -3,6 +3,11 @@ import { Util } from './cipher.js';
 export const encrypt = (text, shift) => {
     const shifts = [];
     let multishift = false;
+
+    let letters = text.toUpperCase().split("");
+    let result = [];
+    let startingShiftPos = -1;
+
     if (!shift || shift === 0) { return text } 
 
     if (!Number.isInteger(shift)) { 
@@ -18,33 +23,12 @@ export const encrypt = (text, shift) => {
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
         }
+        return Util.getResult(letters, result, startingShiftPos, multishift, shift, shifts);
     }
 
-    let letters = text.toUpperCase().split("");
-    let encrypted = [];
-    let startingShiftPos = -1;
-
-    letters.map(l => {
-        if (!Util.isLetter(l)) { 
-            encrypted.push(l); 
-        } else if (l.trim() === '') { 
-            encrypted.push(l) ;
-        } else {
-            let newData = ""
-            if (!multishift) {
-                newData = Util.shiftLetter(l, shift);
-            } else {
-                newData = Util.shiftLetter(l, Util.getNextShift(shifts, startingShiftPos));
-                startingShiftPos++;
-                if (startingShiftPos > (shifts.length - 1)) { startingShiftPos = 0 }
-            }
-            encrypted.push(newData.newLetter);
-        }
-    });
-
-    return encrypted.join("");
+    return Util.getResult(letters, result, startingShiftPos, multishift, shift);
 }
 
 
-//console.log(encrypt("California Trip", 5));
-console.log(encrypt("California Trip", '2, 4, 3'));
+// console.log(encrypt("My Secure Message", 5));
+// console.log(encrypt("California Trip 112 Hello", '2, 4, 3'));

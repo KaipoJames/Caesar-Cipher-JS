@@ -5,10 +5,14 @@ export const decrypt = (text, shift) => {
     let multishift = false;
 
     let letters = text.toUpperCase().split("");
-    let decrypted = [];
+    let result = [];
     let startingShiftPos = -1;
 
     if (!shift || shift === 0) { return text } 
+
+    if (!Number.isInteger(shift)) { 
+        shift = shift.toUpperCase(); 
+    }
 
     if (shift.toString().includes(",")) {
         multishift = true;
@@ -16,43 +20,21 @@ export const decrypt = (text, shift) => {
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
         }
-        return getDecrypted(letters, decrypted, startingShiftPos, multishift, shift, shifts);
+        return Util.getResult(letters, result, startingShiftPos, multishift, shift, shifts);
     }
 
     if (shift.toString() === 'BRUTE FORCE') {
         let possibilities = [];
-        for (let i = -25; i < 25; i++) {
-            const p = { shift: i, string: getDecrypted(letters, decrypted, startingShiftPos, multishift, i) };
+        for (let i = 0; i < Util.alphabet.length; i++) {
+            const p = { shift: i, string: Util.getResult(letters, result, startingShiftPos, multishift, i) };
             possibilities.push(p);
         }
         return possibilities;
     }
 
-    return getDecrypted(letters, decrypted, startingShiftPos, multishift, shift);
+    return Util.getResult(letters, result, startingShiftPos, multishift, shift);
 }
 
-const getDecrypted = (letters, decrypted, startingShiftPos, multishift, shift, shifts) => {
-    decrypted = [];
-    letters.map(l => {
-        if (!Util.isLetter(l)) { 
-            decrypted.push(l); 
-        } else if (l.trim() === '') { 
-            decrypted.push(l) ;
-        } else {
-            let newData = "";
-            if (!multishift) {
-                newData = Util.shiftLetter(l, shift);
-            } else {
-                newData = Util.shiftLetter(l, Util.getNextShift(shifts, startingShiftPos));
-                startingShiftPos++;
-                if (startingShiftPos > (shifts.length - 1)) { startingShiftPos = 0 }
-            }
-            decrypted.push(newData.newLetter);
-        }
-    });
-    return decrypted.join("");
-}
-
-console.log(decrypt("HFQNKTWSNF YWNU", -5));
-console.log(decrypt("HFQNKTWSNF YWNU", 'BRUTE FORCE'));
-console.log(decrypt("EEOKJRTRLC XUKT", '-2, -4, -3'));
+// console.log(decrypt("HFQNKTWSNF YWNU", -5));
+// console.log(decrypt("RD XJHZWJ RJXXFLJ", 'brute force'));
+// console.log(decrypt("EEOKJRTRLC XUKT", '-2, -4, -3'));

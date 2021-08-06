@@ -49,13 +49,34 @@ const getNextShift = (shifts, pos) => {
     return shifts[nextPos];
 }
 
+const getResult = (letters, result, startingShiftPos, multishift, shift, shifts) => {
+    result = [];
+    letters.map(l => {
+        if (!Util.isLetter(l) || l.trim() === '')  { 
+            result.push(l); 
+        } else {
+            let newData = "";
+            if (!multishift) {
+                newData = Util.shiftLetter(l, shift);
+            } else {
+                newData = Util.shiftLetter(l, Util.getNextShift(shifts, startingShiftPos));
+                startingShiftPos++;
+                if (startingShiftPos > (shifts.length - 1)) { startingShiftPos = 0 }
+            }
+            result.push(newData.newLetter);
+        }
+    });
+    return result.join("");
+}
+
 export const Util = {
     alphabet: alphabet,
     shiftLetter: shiftLetter,
     randomShift: randomShift,
     isLetter: isLetter,
     isNegative: isNegative,
-    increment, increment,
-    decrement, decrement,
-    getNextShift, getNextShift
+    increment: increment,
+    decrement: decrement,
+    getNextShift: getNextShift,
+    getResult: getResult
 }
