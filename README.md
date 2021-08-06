@@ -52,6 +52,13 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
    // OUTPUT: Don't Forget To Make Sure The Passwords are encrypted!
    ```
 
+  - For single shifts, you can use a 'brute-force' attack if you don't know the shift number
+    ```js
+      console.log(decrypt("RD XJHZWJ RJXXFLJ", 'BRUTE FORCE'));
+
+      // This will output all possible combinations from shift 0-25.
+    ```
+
 ## What's Included
  - v1.1.1: Added Support for Mult-Shift Key.
  - v1.1.2: Added Functionality to perform 'Brute Force' while decrypting.

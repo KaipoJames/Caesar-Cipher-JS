@@ -8,11 +8,9 @@ export const encrypt = (text, shift) => {
     let result = [];
     let startingShiftPos = -1;
 
-    if (!shift || shift === 0) { return text } 
+    Util.checkForEmptyShift(shift, text);
+    Util.checkIfShiftIsNotNumber(shift);
 
-    if (!Number.isInteger(shift)) { 
-        shift = shift.toUpperCase(); 
-    }
     if (shift === 'RANDOM') {
         shift = Util.randomShift(shift);
     } 

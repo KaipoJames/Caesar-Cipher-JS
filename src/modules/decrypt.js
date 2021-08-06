@@ -8,11 +8,8 @@ export const decrypt = (text, shift) => {
     let result = [];
     let startingShiftPos = -1;
 
-    if (!shift || shift === 0) { return text } 
-
-    if (!Number.isInteger(shift)) { 
-        shift = shift.toUpperCase(); 
-    }
+    Util.checkForEmptyShift(shift, text);
+    Util.checkIfShiftIsNotNumber(shift);
 
     if (shift.toString().includes(",")) {
         multishift = true;
@@ -36,5 +33,5 @@ export const decrypt = (text, shift) => {
 }
 
 // console.log(decrypt("HFQNKTWSNF YWNU", -5));
-// console.log(decrypt("RD XJHZWJ RJXXFLJ", 'brute force'));
+// console.log(decrypt("RD XJHZWJ RJXXFLJ", 'BRUTE FORCE'));
 // console.log(decrypt("EEOKJRTRLC XUKT", '-2, -4, -3'));

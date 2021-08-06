@@ -1,5 +1,9 @@
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
+const checkForEmptyShift = (shift, text) => {
+    if (!shift || shift === 0) { return text } 
+}
+
 const shiftLetter = (letter, shift) => {
     const alphabetPos = alphabet.indexOf(letter);
     const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
@@ -10,6 +14,12 @@ const shiftLetter = (letter, shift) => {
 const randomShift = (shift) => {
     shift = Math.floor(Math.random() * 100);
     return shift;
+}
+
+const checkIfShiftIsNotNumber = (shift) => {
+    if (!Number.isInteger(shift)) { 
+        shift = shift.toUpperCase(); 
+    }
 }
 
 const isLetter = (str) => {
@@ -71,8 +81,10 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts)
 
 export const Util = {
     alphabet: alphabet,
+    checkForEmptyShift: checkForEmptyShift,
     shiftLetter: shiftLetter,
     randomShift: randomShift,
+    checkIfShiftIsNotNumber: checkIfShiftIsNotNumber,
     isLetter: isLetter,
     isNegative: isNegative,
     increment: increment,
