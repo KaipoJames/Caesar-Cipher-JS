@@ -12,7 +12,7 @@ export const encrypt = (text, shift) => {
     Util.checkIfShiftIsNotNumber(shift);
 
     if (shift === 'RANDOM') {
-        shift = Util.randomShift(shift);
+        shift = Util.randomShift();
     } 
 
     if (shift.toString().includes(",")) {
@@ -29,4 +29,5 @@ export const encrypt = (text, shift) => {
 
 
 // console.log(encrypt("My Secure Message", 5));
+// console.log(encrypt("My Secure Message", 'RANDOM'));
 // console.log(encrypt("California Trip 112 Hello", '2, 4, 3'));

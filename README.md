@@ -62,7 +62,7 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
 ## What's Included
  - v1.1.1: Added Support for Mult-Shift Key.
  - v1.1.2: Added Functionality to perform 'Brute Force' while decrypting.
- - v1.2.3: Refactored codebase and optimized performance.
+ - v1.1.3: Refactored codebase and optimized performance.
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.

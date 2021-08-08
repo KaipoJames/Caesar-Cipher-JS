@@ -1,25 +1,46 @@
+// EXPORTED FUNCTIONS
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
 const checkForEmptyShift = (shift, text) => {
     if (!shift || shift === 0) { return text } 
 }
 
-const shiftLetter = (letter, shift) => {
-    const alphabetPos = alphabet.indexOf(letter);
-    const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
-    const newLetter = alphabet[newPos];
-    return { newPos: newPos, newLetter: newLetter };
-}
-
-const randomShift = (shift) => {
-    shift = Math.floor(Math.random() * 100);
-    return shift;
+const randomShift = () => {
+    return Math.floor(Math.random() * 25);
 }
 
 const checkIfShiftIsNotNumber = (shift) => {
     if (!Number.isInteger(shift)) { 
         shift = shift.toUpperCase(); 
     }
+}
+
+const getResult = (letters, result, startingShiftPos, multishift, shift, shifts) => {
+    result = [];
+    letters.map(l => {
+        if (!isLetter(l) || l.trim() === '')  { 
+            result.push(l); 
+        } else {
+            let newData = "";
+            if (!multishift) {
+                newData = shiftLetter(l, shift);
+            } else {
+                newData = shiftLetter(l, getNextShift(shifts, startingShiftPos));
+                startingShiftPos++;
+                if (startingShiftPos > (shifts.length - 1)) { startingShiftPos = 0 }
+            }
+            result.push(newData.newLetter);
+        }
+    });
+    return result.join("");
+}
+
+// Cipher helper functions (Not Exported)
+const shiftLetter = (letter, shift) => {
+    const alphabetPos = alphabet.indexOf(letter);
+    const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
+    const newLetter = alphabet[newPos];
+    return { newPos: newPos, newLetter: newLetter };
 }
 
 const isLetter = (str) => {
@@ -59,36 +80,11 @@ const getNextShift = (shifts, pos) => {
     return shifts[nextPos];
 }
 
-const getResult = (letters, result, startingShiftPos, multishift, shift, shifts) => {
-    result = [];
-    letters.map(l => {
-        if (!Util.isLetter(l) || l.trim() === '')  { 
-            result.push(l); 
-        } else {
-            let newData = "";
-            if (!multishift) {
-                newData = Util.shiftLetter(l, shift);
-            } else {
-                newData = Util.shiftLetter(l, Util.getNextShift(shifts, startingShiftPos));
-                startingShiftPos++;
-                if (startingShiftPos > (shifts.length - 1)) { startingShiftPos = 0 }
-            }
-            result.push(newData.newLetter);
-        }
-    });
-    return result.join("");
-}
 
 export const Util = {
     alphabet: alphabet,
     checkForEmptyShift: checkForEmptyShift,
-    shiftLetter: shiftLetter,
     randomShift: randomShift,
     checkIfShiftIsNotNumber: checkIfShiftIsNotNumber,
-    isLetter: isLetter,
-    isNegative: isNegative,
-    increment: increment,
-    decrement: decrement,
-    getNextShift: getNextShift,
     getResult: getResult
 }
