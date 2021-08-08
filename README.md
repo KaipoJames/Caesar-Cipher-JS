@@ -59,16 +59,20 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
       // This will output all possible combinations from shift 0-25.
     ```
 
-## What's Included
+## Version History
  - v1.1.1: Added Support for Mult-Shift Key.
  - v1.1.2: Added Functionality to perform 'Brute Force' while decrypting.
  - v1.1.3: Refactored codebase and optimized performance.
+ - v1.1.4: 
+   - Removed unused functions that were being exported from cipher.js
+   - Updated README 'Version History' and 'Contributing' sections
+   - Shortened various functions in modules folder.
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
 
 ## Contributing
- - coming soon...
+ - I would love if you would like to contribute to the project! Feel free to fork this repo and propose your changes!
 
 ## Author
  - Kaipo Wilmeth(KaipoJames)
