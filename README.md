@@ -60,7 +60,7 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
     ```
 
 ## Version History
- - v1.1.1: Added Support for Mult-Shift Key.
+ - v1.1.1: Added Support for Multi-Shift Key.
  - v1.1.2: Added Functionality to perform 'Brute Force' while decrypting.
  - v1.1.3: Refactored codebase and optimized performance.
  - v1.1.4: 
@@ -73,6 +73,7 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
 
 ## Contributing
  - I would love if you would like to contribute to the project! Feel free to fork this repo and propose your changes!
+ - Any great ideas about adding new encryption algorithms are greatly encouraged!
 
 ## Author
  - Kaipo Wilmeth(KaipoJames)
