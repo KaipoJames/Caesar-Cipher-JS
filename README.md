@@ -59,6 +59,10 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
       // This will output all possible combinations from shift 0-25.
     ```
 
+## Running Tests
+ - run 'npm install' to install project dependencies.
+ - run 'npm run test' to execute all tests.
+
 ## Version History
  - v1.1.1: Added Support for Multi-Shift Key.
  - v1.1.2: Added Functionality to perform 'Brute Force' while decrypting.
@@ -69,7 +73,7 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
    - Shortened various functions in modules folder.
  - v1.1.5:
    - Added Unit Testing(JEST) for encrypt() and decrypt() methods
-   - Command to Start Test: npm run test
+   - Command to Start Tests: npm run test
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
