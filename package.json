@@ -10,10 +10,13 @@
     "url": "https://github.com/KaipoJames/Caesar-Cipher-JS.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "keywords": [],
   "author": "Kaipo Wilmeth <kaipojames12@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/KaipoJames/Caesar-Cipher-JS.git"
+  "homepage": "https://github.com/KaipoJames/Caesar-Cipher-JS.git",
+  "devDependencies": {
+    "jest": "^27.1.0"
+  }
 }

@@ -67,6 +67,9 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
    - Removed unused functions that were being exported from cipher.js
    - Updated README 'Version History' and 'Contributing' sections
    - Shortened various functions in modules folder.
+ - v1.1.5:
+   - Added Unit Testing(JEST) for encrypt() and decrypt() methods
+   - Command to Start Test: npm run test
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.

@@ -26,8 +26,3 @@ export const encrypt = (text, shift) => {
 
     return Util.getResult(letters, result, startingShiftPos, multishift, shift);
 }
-
-
-// console.log(encrypt("My Secure Message", 5));
-// console.log(encrypt("My Secure Message", 'RANDOM'));
-// console.log(encrypt("California Trip 112 Hello", '2, 4, 3'));
