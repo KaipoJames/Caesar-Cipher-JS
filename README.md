@@ -54,6 +54,19 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
       // This will output all possible combinations from shift 0-25.
     ```
 
+## Encrypting Numbers
+ - Caesar-Cipher-JS is smart enough to recognize and encrypt numbers automatically.
+    ```js
+      console.log(encrypt("My Address Number Changed from 432 to 434", -3));
+      // OUTPUT: {msg: "JV XAAOBPP KRJYBO ZEXKDBA COLJ EDC QL EDE", numIndexes: [31, 32, 33, 38, 39, 40], shift: -3}
+    ```
+ - numIndexes is an array of indexes keeping track of the positions of all the numbers in the message.
+ - To decrypt the numbers, pass in the array of indexes as the third parameter, and the reverse-shift as normal.
+    ```js
+      console.log(decrypt("JV XAAOBPP KRJYBO ZEXKDBA COLJ EDC QL EDE", 3, [31, 32, 33, 38, 39, 40]))
+      // OUTPUT: {msg: "MY ADDRESS NUMBER CHANGED FROM 432 TO 434", shift: 3}
+    ```
+
 ## Running Tests
  - run ``` npm install ``` to install project dependencies.
  - run ``` npm run test ``` to execute all tests.
@@ -71,13 +84,33 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
    - Command to Start Tests: npm run test
  - v1.1.51:
    - Adds an updated README when you use this version.
+ - v1.2.0:
+   - Major Update. (Number Encryption)
+   - All encryptions/decryptions now return an object with 2 - 3 properties. The shift used is always returned.
+   - Added support for encrypting numbers
+     - If numbers are in an encryption string, an array of number index position is created and returned in the result
+     - Numbers are encrypted into letters for better security as the position of the numbers is unrecognizable to an outside eye.
+     - In decryption, the array of indexes is needed to find the position of the numbers to turn them back into numbers.
+   - Updated All Unit Tests to match new format.
+   - Added 1 Unit test for 'BRUTE FORCE' decryption.
+   - Added 'Encrypting Numbers' section to README.
+   - Added 'Future Works' Section to README.
+   - Edited the 'Contributing' section of README.
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
 
+## Future Works
+  - Provide users with the option to have the shift and/or number indexes returned with the encoded/decoded message.
+  - Add support for other encryption algorithms besides the current substitution ones.
+  - Move the 'Version History' section to its own file called 'CHANGELOG.md'.
+  - Move All Documentation about features into its own file. 
+  - Create Documentation explaining technical features, code architecture of the project, and other code-based information.
+
 ## Contributing
  - I would love if you would like to contribute to the project! Feel free to fork this repo and propose your changes!
- - Any great ideas about adding new encryption algorithms are greatly encouraged!
+ - Any great ideas about adding new encryption algorithms are greatly encouraged! 
+ - See the 'Future Works' section above for some ideas.
 
 ## Author
  - Kaipo Wilmeth
