@@ -69,6 +69,8 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
  - v1.1.5:
    - Added Unit Testing(JEST) for encrypt() and decrypt() methods
    - Command to Start Tests: npm run test
+ - v1.1.51:
+   - Adds an updated README when you use this version.
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
