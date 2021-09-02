@@ -3,7 +3,7 @@
 
 ![npm](https://img.shields.io/npm/v/caeser-cipher-js?style=for-the-badge)
 
-Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/computer-science/caesar-cipher).
+Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-science/caesar-cipher).
   
 ## Installation
  - Install with [npm](https://www.npmjs.com/): ``` npm install caeser-cipher-js ```
@@ -19,7 +19,6 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
  - To use the Cipher functions you can call 'encrypt' or 'decrypt'.
     ``` js
     const message = Cipher.encrypt("This message will be encrypted.", 4);
-
     //OUTPUT: XLMW QIWWEKI AMPP FI IRGVCTXIH.
     ```
    - The value of the message variable is encrypted with a shift 4 key.
@@ -27,7 +26,6 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
  - To decrypt, pass in the decrypted message and the reverse-shift.
     ``` js
     const message = Cipher.decrypt("XLMW QIWWEKI AMPP FI IRGVCTXIH.", -4); 
-
     // OUTPUT: THIS MESSAGE WILL BE ENCRYPTED
     ```
 
@@ -43,25 +41,22 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
  - NOTE: numbers in a multi-shift key must be separated by commas to work.
    ```js
    console.log(encrypt("Don't Forget To Make Sure The Passwords are encrypted!", '3,8,9'));
-
    // OUTPUT: GWW'W NXUONW BX PITH ADUM CKM YDABZWAGA JUM NQKABXCHL!
 
    // Knowing the multi-shift key, pass in the opposite sign used in the encryption.
    console.log(decrypt("GWW'W NXUONW BX PITH ADUM CKM YDABZWAGA JUM NQKABXCHL!", '-3,-8,-9'));
-
    // OUTPUT: Don't Forget To Make Sure The Passwords are encrypted!
    ```
 
   - For single shifts, you can use a 'brute-force' attack if you don't know the shift number
     ```js
       console.log(decrypt("RD XJHZWJ RJXXFLJ", 'BRUTE FORCE'));
-
       // This will output all possible combinations from shift 0-25.
     ```
 
 ## Running Tests
- - run 'npm install' to install project dependencies.
- - run 'npm run test' to execute all tests.
+ - run ``` npm install ``` to install project dependencies.
+ - run ``` npm run test ``` to execute all tests.
 
 ## Version History
  - v1.1.1: Added Support for Multi-Shift Key.
@@ -83,7 +78,7 @@ Learn more about what is a [Caesar Cipher](https://www.sciencedirect.com/topics/
  - Any great ideas about adding new encryption algorithms are greatly encouraged!
 
 ## Author
- - Kaipo Wilmeth(KaipoJames)
+ - Kaipo Wilmeth
 
 ## Copyright and License
  - [MIT License](LICENSE.txt)
