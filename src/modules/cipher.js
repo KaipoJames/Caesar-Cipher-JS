@@ -15,11 +15,23 @@ const checkIfShiftIsNotNumber = (shift) => {
     }
 }
 
-const getResult = (letters, result, startingShiftPos, multishift, shift, shifts) => {
+const getResult = (letters, result, startingShiftPos, multishift, shift, shifts, type, numIndexes) => {
     result = [];
+    let numberIndexes = [];
+    let pos = -1;
     letters.map(l => {
-        if (!isLetter(l) || l.trim() === '')  { 
-            result.push(l); 
+        pos++;
+        if (!isLetter(l) || l.trim() === '' || numIndexes.includes(pos))  { 
+            if (type === "encryption") {
+                if (Number.isInteger(parseInt(l))) {
+                    result.push(alphabet[l]);
+                    numberIndexes.push(pos);
+                } else {
+                    result.push(l); 
+                }   
+            } else {
+                result.push(l); 
+            }
         } else {
             let newData = "";
             if (!multishift) {
@@ -32,10 +44,30 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts)
             result.push(newData.newLetter);
         }
     });
-    return result.join("");
+    lookForNumbersIfAny(type, result, numIndexes, numberIndexes);
+    return getFinalResult(result.join(""), shift, multishift, shifts, numberIndexes);
+    
 }
 
 // Cipher helper functions (Not Exported)
+const lookForNumbersIfAny = (type, result, numIndexes) => {
+    if (type === "decryption") {
+        for (let i = 0; i < numIndexes.length; i++) {
+            result[numIndexes[i]] = alphabet.indexOf(result[numIndexes[i]]);
+        }
+    }
+}
+
+const getFinalResult = (msg, shift, multishift, shifts, numberIndexes) => {
+    const toReturn = {};
+    toReturn.msg = msg;
+    if (numberIndexes.length > 0) {
+        toReturn.numIndexes = numberIndexes;
+    }
+    multishift ? toReturn.shifts = shifts : toReturn.shift = shift;
+    return toReturn;
+}
+
 const shiftLetter = (letter, shift) => {
     const alphabetPos = alphabet.indexOf(letter);
     const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);

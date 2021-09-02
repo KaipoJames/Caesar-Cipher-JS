@@ -16,11 +16,11 @@ const msg3 = {
 
 // <-- TESTS -->
 test('encrypts ' + msg1.msg, () => {
-    expect(encrypt(msg1.msg, msg1.key)).toBe("KQTBJWX FWJ UWJYYD");
+    expect(encrypt(msg1.msg, msg1.key)).toStrictEqual({msg: "KQTBJWX FWJ UWJYYD", shift: 5});
 });
 test('encrypts ' + msg2.msg, () => {
-    expect(encrypt(msg2.msg, msg2.key)).toBe("JV XAAOBPP KRJYBO ZEXKDBA COLJ 432 QL 434");
+    expect(encrypt(msg2.msg, msg2.key)).toStrictEqual({msg: "JV XAAOBPP KRJYBO ZEXKDBA COLJ EDC QL EDE", numIndexes: [31, 32, 33, 38, 39, 40], shift: -3});
 });
 test('encrypts ' + msg3.msg, () => {
-    expect(encrypt(msg3.msg, msg3.key)).toBe("OKHV SH YNHTK WJK VWT VGZV");
+    expect(encrypt(msg3.msg, msg3.key)).toStrictEqual({msg: "OKHV SH YNHTK WJK VWT VGZV", shifts: [2, 6, 3]});
 });
