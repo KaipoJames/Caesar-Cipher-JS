@@ -1,4 +1,4 @@
-import { Util } from './cipher.js';
+import { Caesar } from './cipher.js';
 
 /* <-- ABOUT ENCRYPT PARAMETERS -->
     text: The Message You Want To Encrypt(String)
@@ -12,11 +12,11 @@ export const encrypt = (text, shift) => {
     let result = [];
     let startingShiftPos = -1;
 
-    Util.checkForEmptyShift(shift, text);
-    Util.checkIfShiftIsNotNumber(shift);
+    Caesar.checkForEmptyShift(shift, text);
+    Caesar.checkIfShiftIsNotNumber(shift);
 
     if (shift === 'RANDOM') {
-        shift = Util.randomShift();
+        shift = Caesar.getRandomShift();
     } 
 
     if (shift.toString().includes(",")) {
@@ -25,10 +25,10 @@ export const encrypt = (text, shift) => {
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
         }
-        return Util.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
+        return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
     }
 
-    return Util.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
+    return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
 }
 
 //console.log(encrypt("I Live At 341 Oak Street", 3));

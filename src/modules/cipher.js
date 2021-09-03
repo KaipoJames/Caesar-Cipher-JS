@@ -1,11 +1,11 @@
 // EXPORTED FUNCTIONS
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-const checkForEmptyShift = (shift, text) => {
+export const checkForEmptyShift = (shift, text) => {
     if (!shift || shift === 0) { return text } 
 }
 
-const randomShift = () => {
+export const getRandomShift = () => {
     return Math.floor(Math.random() * 25);
 }
 
@@ -68,17 +68,17 @@ const getFinalResult = (msg, shift, multishift, shifts, numberIndexes) => {
     return toReturn;
 }
 
-const shiftLetter = (letter, shift) => {
+export const shiftLetter = (letter, shift) => {
     const alphabetPos = alphabet.indexOf(letter);
     const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
     const newLetter = alphabet[newPos];
     return { newPos: newPos, newLetter: newLetter };
 }
 
-const isLetter = (str) => {
+export const isLetter = (str) => {
     return str.length === 1 && str.match(/[a-z]/i);
 }
-const isNegative = (num) => {
+export const isNegative = (num) => {
     return num < 0 ? true : false;
 }
 
@@ -113,10 +113,10 @@ const getNextShift = (shifts, pos) => {
 }
 
 
-export const Util = {
+export const Caesar = {
     alphabet: alphabet,
     checkForEmptyShift: checkForEmptyShift,
-    randomShift: randomShift,
+    getRandomShift: getRandomShift,
     checkIfShiftIsNotNumber: checkIfShiftIsNotNumber,
     getResult: getResult
 }

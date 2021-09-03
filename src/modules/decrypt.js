@@ -1,4 +1,4 @@
-import { Util } from './cipher.js';
+import { Caesar } from './cipher.js';
 
 export const decrypt = (text, shift, numberIndexes) => {
     const shifts = [];
@@ -10,8 +10,8 @@ export const decrypt = (text, shift, numberIndexes) => {
 
     if (!numberIndexes) { numberIndexes = [""]; }
 
-    Util.checkForEmptyShift(shift, text);
-    Util.checkIfShiftIsNotNumber(shift);
+    Caesar.checkForEmptyShift(shift, text);
+    Caesar.checkIfShiftIsNotNumber(shift);
 
     if (shift.toString().includes(",")) {
         multishift = true;
@@ -19,19 +19,19 @@ export const decrypt = (text, shift, numberIndexes) => {
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
         }
-        return Util.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
+        return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
     }
 
     if (shift.toString() === 'BRUTE FORCE') {
         let possibilities = [];
-        for (let i = 0; i < Util.alphabet.length; i++) {
-            const p = Util.getResult(letters, result, startingShiftPos, multishift, i, null, "decryption", numberIndexes);
+        for (let i = 0; i < Caesar.alphabet.length; i++) {
+            const p = Caesar.getResult(letters, result, startingShiftPos, multishift, i, null, "decryption", numberIndexes);
             possibilities.push(p);
         }
         return possibilities;
     }
 
-    return Util.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
+    return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
 }
 
 //console.log(decrypt("L OLYH DW DEB RDN VWUHHW", -3, [10, 11, 12]));
