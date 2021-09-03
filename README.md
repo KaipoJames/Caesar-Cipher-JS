@@ -67,6 +67,16 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
       // OUTPUT: {msg: "MY ADDRESS NUMBER CHANGED FROM 432 TO 434", shift: 3}
     ```
 
+## Other Available Methods
+ - In version 1.2.1, various other methods are now accesible for you to import into yoru project.
+ - They are small methods which might be useful incase you are implementing your own methods.
+ -  New methods added:
+    - getRandomShift() returns a random shift.
+    - checkForEmptyShift(shift, text) returns text if there is no shift.
+    - shiftLetter(letter, shift) returns the next letter and the next position of the letter
+    - isLetter(input) returns true if input is a letter, otherwise returns false.
+    - isNegative(input) returns true if input is a negative number, else: false.
+
 ## Running Tests
  - run ``` npm install ``` to install project dependencies.
  - run ``` npm run test ``` to execute all tests.
@@ -96,6 +106,12 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
    - Added 'Encrypting Numbers' section to README.
    - Added 'Future Works' Section to README.
    - Edited the 'Contributing' section of README.
+ - v1.2.1:
+   - Exported various functions from cipher.js to index.js
+   - These functions can now be imported individually or altogether using the global Cipher module.
+   - Documentation is not updated for this version. See nect patch version for docs.
+ - v1.2.2:
+   - Updated README with info about the new methods you can use with Caesar-Cipher-JS.
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
