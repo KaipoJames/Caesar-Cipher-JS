@@ -2,6 +2,7 @@
 import { encrypt } from './modules/encrypt.js';
 import { decrypt } from './modules/decrypt.js';
 import { getRandomShift } from './modules/cipher.js';
+import { getRandomMultiShift } from './modules/cipher.js';
 import { checkForEmptyShift } from './modules/cipher.js';
 import { shiftLetter } from './modules/cipher.js';
 import { isLetter } from './modules/cipher.js';
@@ -11,6 +12,7 @@ import { isNegative } from './modules/cipher.js';
 export { encrypt } from './modules/encrypt.js';
 export { decrypt } from './modules/decrypt.js';
 export { getRandomShift } from './modules/cipher.js';
+export { getRandomMultiShift } from './modules/cipher.js';
 export { checkForEmptyShift } from './modules/cipher.js';
 export { shiftLetter } from './modules/cipher.js';
 export { isLetter } from './modules/cipher.js';
@@ -21,6 +23,7 @@ export const Cipher = {
     encrypt: encrypt, 
     decrypt: decrypt,
     getRandomShift: getRandomShift,
+    getRandomMultiShift: getRandomMultiShift,
     checkForEmptyShift: checkForEmptyShift,
     shiftLetter: shiftLetter,
     isLetter: isLetter,

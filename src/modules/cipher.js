@@ -9,6 +9,16 @@ export const getRandomShift = () => {
     return Math.floor(Math.random() * 25);
 }
 
+export const getRandomMultiShift = (length) => {
+    if (Number.isInteger(length) && length > 1 && length !== null) {
+        let shifts = "";
+        for (let i = 0; i < length; i++) {
+            i !== length - 1 ? shifts += (getRandomShift() + ", ") : shifts += (getRandomShift());
+        }
+        return shifts;
+    }
+}
+
 const checkIfShiftIsNotNumber = (shift) => {
     if (!Number.isInteger(shift)) { 
         shift = shift.toUpperCase(); 
