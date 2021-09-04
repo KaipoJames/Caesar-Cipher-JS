@@ -33,7 +33,3 @@ export const decrypt = (text, shift, numberIndexes) => {
 
     return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
 }
-
-//console.log(decrypt("L OLYH DW DEB RDN VWUHHW", -3, [10, 11, 12]));
-//console.log(decrypt("RD XJHZWJ RJXXFLJ", 'BRUTE FORCE'));
-//console.log(decrypt("JV XAAOBPP KRJYBO ZEXKDBA COLJ EDC QL EDE", 3, [31, 32, 33, 38, 39, 40]));

@@ -1,26 +1,19 @@
-import { encrypt } from '../modules/encrypt.js';
+import { encrypt, encryptRandom, encryptRandomMultiShift } from '../modules/encrypt.js';
+import { encryption_tests as en } from '../test_cases/test_cases.js'
 
-// <-- OBJECTS -->
-const msg1 = {
-    msg: "Flowers Are Pretty",
-    key: 5
-};
-const msg2 = {
-    msg: "My Address Number Changed from 432 to 434",
-    key: -3
-};
-const msg3 = {
-    msg: "Meet Me Where The Sun Sets",
-    key: '2, 6, 3'
-};
+const { test1, test2, test3, random } = en;
+const { singleShift, multiShift } = random;
 
 // <-- TESTS -->
-test('encrypts ' + msg1.msg, () => {
-    expect(encrypt(msg1.msg, msg1.key)).toStrictEqual({msg: "KQTBJWX FWJ UWJYYD", shift: 5});
+test('encrypts ' + test1.text, () => {
+    expect(encrypt(test1.text, test1.shift)).toStrictEqual(test1.result);
 });
-test('encrypts ' + msg2.msg, () => {
-    expect(encrypt(msg2.msg, msg2.key)).toStrictEqual({msg: "JV XAAOBPP KRJYBO ZEXKDBA COLJ EDC QL EDE", numIndexes: [31, 32, 33, 38, 39, 40], shift: -3});
+test('encrypts ' + test2.text, () => {
+    expect(encrypt(test2.text, test2.shift)).toStrictEqual(test2.result);
 });
-test('encrypts ' + msg3.msg, () => {
-    expect(encrypt(msg3.msg, msg3.key)).toStrictEqual({msg: "OKHV SH YNHTK WJK VWT VGZV", shifts: [2, 6, 3]});
+test('encrypts ' + test3.text, () => {
+    encryptRandom(singleShift.text);
+});
+test('encrypts ' + test3.text, () => {
+    encryptRandomMultiShift(multiShift.text, multiShift.length);
 });

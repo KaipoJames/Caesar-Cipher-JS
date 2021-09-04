@@ -1,9 +1,5 @@
 import { Caesar } from './cipher.js';
 
-/* <-- ABOUT ENCRYPT PARAMETERS -->
-    text: The Message You Want To Encrypt(String)
-    shift: The number of spaces you want to 'shift' each character(Integer, string of numbers, RANDOM)
-*/
 export const encrypt = (text, shift) => {
     const shifts = [];
     let multishift = false;
@@ -39,10 +35,3 @@ export const encryptRandomMultiShift = (text, length) => {
     const shift = Caesar.getRandomMultiShift(length);
     return encrypt(text, shift);
 }
-
-//console.log(encryptRandomMultiShift("Hello 34 There 8!", 4));
-
-//console.log(encrypt("I Live At 341 Oak Street", 3));
-//console.log(encrypt("I Live At Oak Street", "-2, -4, -8"));
-//console.log(encrypt("I Live At Oak Street", "RANDOM"));
-//console.log(encrypt("My Address Number Changed from 432 to 434", -3));

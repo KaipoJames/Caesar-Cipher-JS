@@ -20,6 +20,7 @@ export const getRandomMultiShift = (length) => {
 }
 
 const checkIfShiftIsNotNumber = (shift) => {
+    if (!shift || shift === undefined) { return false; }
     if (!Number.isInteger(shift)) { 
         shift = shift.toUpperCase(); 
     }
