@@ -17,11 +17,11 @@ test('encrypts single cases', () => {
     expect(encrypt(test1.text, test1.shift)).toStrictEqual(test1.result);
     expect(encrypt(test2.text, test2.shift)).toStrictEqual(test2.result);
 });
-test('Random Single Shift', () => {
+test('', () => {
     console.log("Random Single Shift: ");
     console.log(encryptRandom(singleShift.text));
 });
-test('Random Multi-Shift:', () => {
+test('', () => {
     console.log("Random Multi-Shift: ");
     console.log(encryptRandomMultiShift(multiShift.text, multiShift.length));
 });
@@ -31,12 +31,12 @@ test('encrypts all: ', () => {
     expect(encryptMany(manyTexts1.texts, manyTexts1.shifts)).toStrictEqual(manyTexts1.result);
     expect(encryptMany(manyTexts2.texts, manyTexts2.shifts)).toStrictEqual(manyTexts2.result);
 });
-test("Random Encrypt Many", () => {
+test('', () => {
     console.log("Random Encrypt Many: ");
     console.log(encryptMany(manyTexts3.texts, manyTexts3.shifts));
 });
 
-// Test Show MSG Only
+// <- Test Show MSG Only ->
 test('Encrypt Show Msg Only ', () => {
     expect(encryptShowMessageOnly(test1.text, test1.shift)).toStrictEqual({ msg: 'UMMB UM IB NQDM W KTWKS QV BPM JIKS' });
     expect(encryptShowMessageOnly(test2.text, test2.shift)).toStrictEqual({ msg: 'F GGSZ YQ DEB CMIHCP NROZCQ' });
