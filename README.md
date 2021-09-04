@@ -112,6 +112,8 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
    - Documentation is not updated for this version. See nect patch version for docs.
  - v1.2.2:
    - Updated README with info about the new methods you can use with Caesar-Cipher-JS.
+ - v2.0.0:
+   - Coming Soon!
 
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
