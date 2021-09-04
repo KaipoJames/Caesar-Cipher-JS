@@ -81,47 +81,12 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
  - run ``` npm install ``` to install project dependencies.
  - run ``` npm run test ``` to execute all tests.
 
-## Version History
- - v1.1.1: Added Support for Multi-Shift Key.
- - v1.1.2: Added Functionality to perform 'Brute Force' while decrypting.
- - v1.1.3: Refactored codebase and optimized performance.
- - v1.1.4: 
-   - Removed unused functions that were being exported from cipher.js
-   - Updated README 'Version History' and 'Contributing' sections
-   - Shortened various functions in modules folder.
- - v1.1.5:
-   - Added Unit Testing(JEST) for encrypt() and decrypt() methods
-   - Command to Start Tests: npm run test
- - v1.1.51:
-   - Adds an updated README when you use this version.
- - v1.2.0:
-   - Major Update. (Number Encryption)
-   - All encryptions/decryptions now return an object with 2 - 3 properties. The shift used is always returned.
-   - Added support for encrypting numbers
-     - If numbers are in an encryption string, an array of number index position is created and returned in the result
-     - Numbers are encrypted into letters for better security as the position of the numbers is unrecognizable to an outside eye.
-     - In decryption, the array of indexes is needed to find the position of the numbers to turn them back into numbers.
-   - Updated All Unit Tests to match new format.
-   - Added 1 Unit test for 'BRUTE FORCE' decryption.
-   - Added 'Encrypting Numbers' section to README.
-   - Added 'Future Works' Section to README.
-   - Edited the 'Contributing' section of README.
- - v1.2.1:
-   - Exported various functions from cipher.js to index.js
-   - These functions can now be imported individually or altogether using the global Cipher module.
-   - Documentation is not updated for this version. See nect patch version for docs.
- - v1.2.2:
-   - Updated README with info about the new methods you can use with Caesar-Cipher-JS.
- - v2.0.0:
-   - Coming Soon!
-
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
 
 ## Future Works
   - Provide users with the option to have the shift and/or number indexes returned with the encoded/decoded message.
   - Add support for other encryption algorithms besides the current substitution ones.
-  - Move the 'Version History' section to its own file called 'CHANGELOG.md'.
   - Move All Documentation about features into its own file. 
   - Create Documentation explaining technical features, code architecture of the project, and other code-based information.
 
