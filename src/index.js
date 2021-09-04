@@ -20,6 +20,15 @@ export { checkForEmptyShift } from './modules/cipher.js';
 export { isLetter } from './modules/cipher.js';
 export { isNegative } from './modules/cipher.js';
 
+// Encryption Package
+export const Encryption = {
+    encrypt: encrypt,
+    encryptRandom: encryptRandom, // depends on encrypt
+    encryptRandomMultiShift: encryptRandomMultiShift, // depends on encrypt
+    encryptMany: encryptMany,
+    encryptShowMessageOnly: encryptShowMessageOnly
+}
+
 // Bundle all functions into 'Cipher' - Global Export
 export const Cipher = { 
     Encryption: Encryption,
@@ -32,12 +41,3 @@ export const Cipher = {
     isLetter: isLetter,
     isNegative: isNegative
 };
-
-// Encryption Package
-export const Encryption = {
-    encrypt: encrypt,
-    encryptRandom: encryptRandom, // depends on encrypt
-    encryptRandomMultiShift: encryptRandomMultiShift, // depends on encrypt
-    encryptMany: encryptMany,
-    encryptShowMessageOnly: encryptShowMessageOnly
-}

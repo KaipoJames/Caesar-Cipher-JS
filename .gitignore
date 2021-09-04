@@ -1,6 +1,7 @@
 .DS-Store
 node_modules
 *.env
+*.tgz
 .next/
 .cache/
 .idea/ 
