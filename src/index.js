@@ -22,6 +22,7 @@ export { isNegative } from './modules/cipher.js';
 
 // Bundle all functions into 'Cipher' - Global Export
 export const Cipher = { 
+    Encryption: Encryption,
     encrypt: encrypt, 
     decrypt: decrypt,
     getRandomShift: getRandomShift,
