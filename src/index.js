@@ -1,5 +1,5 @@
 // Import all functions Individually
-import { encrypt } from './modules/encrypt.js';
+import { encrypt, encryptMany, encryptShowMessageOnly } from './modules/encrypt.js';
 import { encryptRandom } from './modules/encrypt.js';
 import { encryptRandomMultiShift } from './modules/encrypt.js';
 
@@ -37,5 +37,7 @@ export const Cipher = {
 export const Encryption = {
     encrypt: encrypt,
     encryptRandom: encryptRandom, // depends on encrypt
-    encryptRandomMultiShift: encryptRandomMultiShift // depends on encrypt
+    encryptRandomMultiShift: encryptRandomMultiShift, // depends on encrypt
+    encryptMany: encryptMany,
+    encryptShowMessageOnly: encryptShowMessageOnly
 }
