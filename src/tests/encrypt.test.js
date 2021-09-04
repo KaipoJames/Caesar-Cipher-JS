@@ -13,10 +13,8 @@ const { singleShift, multiShift } = random;
 // <-- TESTS -->
 
 // <- Single-Case ->
-test('encrypts ' + test1.text, () => {
+test('encrypts single cases', () => {
     expect(encrypt(test1.text, test1.shift)).toStrictEqual(test1.result);
-});
-test('encrypts ' + test2.text, () => {
     expect(encrypt(test2.text, test2.shift)).toStrictEqual(test2.result);
 });
 test('Random Single Shift', () => {
@@ -31,8 +29,6 @@ test('Random Multi-Shift:', () => {
 // <- Multi-Cases ->
 test('encrypts all: ', () => {
     expect(encryptMany(manyTexts1.texts, manyTexts1.shifts)).toStrictEqual(manyTexts1.result);
-});
-test('encrypts all: ', () => {
     expect(encryptMany(manyTexts2.texts, manyTexts2.shifts)).toStrictEqual(manyTexts2.result);
 });
 test("Random Encrypt Many", () => {
