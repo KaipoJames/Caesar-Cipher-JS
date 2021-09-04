@@ -54,7 +54,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
       // This will output all possible combinations from shift 0-25.
     ```
 
-## Encrypting Numbers
+### Encrypting Numbers
  - Caesar-Cipher-JS is smart enough to recognize and encrypt numbers automatically.
     ```js
       console.log(encrypt("My Address Number Changed from 432 to 434", -3));
@@ -67,26 +67,27 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
       // OUTPUT: {msg: "MY ADDRESS NUMBER CHANGED FROM 432 TO 434", shift: 3}
     ```
 
-## Other Available Methods
- - In version 1.2.1, various other methods are now accesible for you to import into yoru project.
- - They are small methods which might be useful incase you are implementing your own methods.
+### Other Available Methods
+ - As of version 1.2.1, various other methods are now accesible to import into your project.
+ - They are small methods which may be useful incase you are implementing your own solutions.
  -  New methods added:
     - getRandomShift() returns a random shift.
+    - getRandomMultiShift() returns a random MultiShift(Only avalable in version 2.0.0 sorry!)
     - checkForEmptyShift(shift, text) returns text if there is no shift.
     - isLetter(input) returns true if input is a letter, otherwise returns false.
     - isNegative(input) returns true if input is a negative number, else: false.
 
-## Running Tests
+### Running Tests
  - run ``` npm install ``` to install project dependencies.
  - run ``` npm run test ``` to execute all tests.
 
-## Version History
+
+## Documentation 
+
+### Version History
  - see [CHANGELOG](https://github.com/KaipoJames/Caesar-Cipher-JS/blob/master/CHANGELOG.md)
 
-## Documentation
- - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
-
-## Future Works
+### Future Works
   - Provide users with the option to have the shift and/or number indexes returned with the encoded/decoded message.
   - Add support for other encryption algorithms besides the current substitution ones.
   - Move All Documentation about features into its own file. 
@@ -97,9 +98,12 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
  - Any great ideas about adding new encryption algorithms are greatly encouraged! 
  - See the 'Future Works' section above for some ideas.
 
-## Author
+
+## Author & License
+
+### Author
  - Kaipo Wilmeth
 
-## Copyright and License
+### Copyright and License
  - [MIT License](LICENSE.txt)
 
