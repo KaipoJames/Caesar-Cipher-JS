@@ -1,5 +1,8 @@
 // Import all functions Individually
 import { encrypt } from './modules/encrypt.js';
+import { encryptRandom } from './modules/encrypt.js';
+import { encryptRandomMultiShift } from './modules/encrypt.js';
+
 import { decrypt } from './modules/decrypt.js';
 import { getRandomShift } from './modules/cipher.js';
 import { getRandomMultiShift } from './modules/cipher.js';
@@ -14,7 +17,6 @@ export { decrypt } from './modules/decrypt.js';
 export { getRandomShift } from './modules/cipher.js';
 export { getRandomMultiShift } from './modules/cipher.js';
 export { checkForEmptyShift } from './modules/cipher.js';
-export { shiftLetter } from './modules/cipher.js';
 export { isLetter } from './modules/cipher.js';
 export { isNegative } from './modules/cipher.js';
 
@@ -29,3 +31,10 @@ export const Cipher = {
     isLetter: isLetter,
     isNegative: isNegative
 };
+
+// Encryption Package
+export const Encryption = {
+    encrypt: encrypt,
+    encryptRandom: encryptRandom, // depends on encrypt
+    encryptRandomMultiShift: encryptRandomMultiShift // depends on encrypt
+}

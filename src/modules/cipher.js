@@ -127,6 +127,7 @@ export const Caesar = {
     alphabet: alphabet,
     checkForEmptyShift: checkForEmptyShift,
     getRandomShift: getRandomShift,
+    getRandomMultiShift: getRandomMultiShift,
     checkIfShiftIsNotNumber: checkIfShiftIsNotNumber,
     getResult: getResult
 }

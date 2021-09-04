@@ -18,7 +18,6 @@ export const encrypt = (text, shift) => {
     if (shift === 'RANDOM') {
         shift = Caesar.getRandomShift();
     } 
-
     if (shift.toString().includes(",")) {
         multishift = true;
         const nums = shift.split(",");
@@ -30,6 +29,18 @@ export const encrypt = (text, shift) => {
 
     return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
 }
+
+export const encryptRandom = (text) => {
+    const shift = Caesar.getRandomShift();
+    return encrypt(text, shift);
+}
+
+export const encryptRandomMultiShift = (text, length) => {
+    const shift = Caesar.getRandomMultiShift(length);
+    return encrypt(text, shift);
+}
+
+//console.log(encryptRandomMultiShift("Hello 34 There 8!", 4));
 
 //console.log(encrypt("I Live At 341 Oak Street", 3));
 //console.log(encrypt("I Live At Oak Street", "-2, -4, -8"));
