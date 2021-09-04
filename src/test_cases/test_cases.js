@@ -22,6 +22,38 @@ export const encryption_tests = {
             text: "Meet me at five o clock in the back",
             length: 5
         }
+    },
+    manyTexts1: {
+        texts: ["Meet me at five o clock in the back", "I live at 341 Holmes Street", "Don't Trust Him At All!"],
+        shifts: 7,
+        result: [
+            { msg: 'TLLA TL HA MPCL V JSVJR PU AOL IHJR', shift: 7, msgID: 1 },
+            {
+              msg: 'P SPCL HA DEB OVSTLZ ZAYLLA',
+              numIndexes: [ 10, 11, 12 ],
+              shift: 7,
+              msgID: 2
+            },
+            { msg: "KVU'A AYBZA OPT HA HSS!", shift: 7, msgID: 3 }
+        ]
+    },
+    manyTexts2: {
+        texts: ["Meet me at five o clock in the back", "I live at 341 Holmes Street", "Don't Trust Him At All!"],
+        shifts: [5, 2, 8],
+        result: [
+            { msg: 'RJJY RJ FY KNAJ T HQTHP NS YMJ GFHP', shift: 5, msgID: 1 },
+            {
+              msg: 'K NKXG CV DEB JQNOGU UVTGGV',
+              numIndexes: [ 10, 11, 12 ],
+              shift: 2,
+              msgID: 2
+            },
+            { msg: "LWV'B BZCAB PQU IB ITT!", shift: 8, msgID: 3 }
+        ]
+    },
+    manyTexts3: {
+        texts: ["Meet me at five o clock in the back", "I live at 341 Holmes Street", "Don't Trust Him At All!"],
+        shifts: ['RANDOM', 'RANDOM', 'RANDOM']
     }
 };
 

@@ -35,3 +35,21 @@ export const encryptRandomMultiShift = (text, length) => {
     const shift = Caesar.getRandomMultiShift(length);
     return encrypt(text, shift);
 }
+
+export const encryptMany = (texts, shifts) => {
+    if (!texts || texts.length < 1 || !shifts || shifts.length < 1) { return texts }
+    if (!Array.isArray(shifts) && Number.isInteger(shifts)) {
+        let tmp = shifts;
+        shifts = [];
+        for (let i = 0; i < texts.length; i++) {
+            shifts.push(tmp);
+        }
+    }
+    const results = [];
+    for (let i = 0; i < texts.length; i++) {
+        const result = encrypt(texts[i], shifts[i]);
+        result.msgID = i + 1;
+        results.push(result);
+    }
+    return results;
+}
