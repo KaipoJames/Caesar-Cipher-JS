@@ -81,6 +81,9 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
  - run ``` npm install ``` to install project dependencies.
  - run ``` npm run test ``` to execute all tests.
 
+## Version History
+ - see [CHANGELOG](https://github.com/KaipoJames/Caesar-Cipher-JS/blob/master/CHANGELOG.md)
+
 ## Documentation
  - All Documentation for this Package currently lives in this file alone. See the 'Getting Started' section. That should be all you need to get going with this package since it is a fairly new package.
 
