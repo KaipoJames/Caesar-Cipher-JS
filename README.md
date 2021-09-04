@@ -73,7 +73,6 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
  -  New methods added:
     - getRandomShift() returns a random shift.
     - checkForEmptyShift(shift, text) returns text if there is no shift.
-    - shiftLetter(letter, shift) returns the next letter and the next position of the letter
     - isLetter(input) returns true if input is a letter, otherwise returns false.
     - isNegative(input) returns true if input is a negative number, else: false.
 
