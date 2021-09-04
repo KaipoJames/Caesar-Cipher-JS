@@ -4,7 +4,7 @@ import {
     encryptRandomMultiShift ,
     encryptMany
 } from '../modules/encrypt.js';
-import { encryption_tests as en } from '../test_cases/test_cases.js'
+import { encryption_tests as en } from './test_cases/test_cases.js'
 
 const { test1, test2, random, manyTexts1, manyTexts2, manyTexts3 } = en;
 const { singleShift, multiShift } = random;

@@ -1,5 +1,5 @@
 import { decrypt } from '../modules/decrypt.js'
-import { decryption_tests as de } from '../test_cases/test_cases.js';
+import { decryption_tests as de } from './test_cases/test_cases.js';
 
 const { test1, test2, test3 } = de;
 
