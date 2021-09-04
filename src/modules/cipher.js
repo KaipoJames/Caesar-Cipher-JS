@@ -26,7 +26,7 @@ const checkIfShiftIsNotNumber = (shift) => {
     }
 }
 
-const getResult = (letters, result, startingShiftPos, multishift, shift, shifts, type, numIndexes) => {
+const getResult = (letters, result, startingShiftPos, multishift, shift, shifts, type, numIndexes, msgOnly) => {
     result = [];
     let numberIndexes = [];
     let pos = -1;
@@ -56,7 +56,7 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts,
         }
     });
     lookForNumbersIfAny(type, result, numIndexes, numberIndexes);
-    return getFinalResult(result.join(""), shift, multishift, shifts, numberIndexes);
+    return getFinalResult(result.join(""), shift, multishift, shifts, numberIndexes, msgOnly);
     
 }
 
@@ -69,9 +69,12 @@ const lookForNumbersIfAny = (type, result, numIndexes) => {
     }
 }
 
-const getFinalResult = (msg, shift, multishift, shifts, numberIndexes) => {
+const getFinalResult = (msg, shift, multishift, shifts, numberIndexes, msgOnly) => {
     const toReturn = {};
     toReturn.msg = msg;
+    if (msgOnly === true) {
+        return toReturn;
+    }
     if (numberIndexes.length > 0) {
         toReturn.numIndexes = numberIndexes;
     }

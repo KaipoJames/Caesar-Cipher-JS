@@ -2,7 +2,8 @@ import {
     encrypt, 
     encryptRandom, 
     encryptRandomMultiShift ,
-    encryptMany
+    encryptMany,
+    encryptShowMessageOnly
 } from '../modules/encrypt.js';
 import { encryption_tests as en } from './test_cases/test_cases.js'
 
@@ -37,4 +38,10 @@ test('encrypts all: ', () => {
 test("Random Encrypt Many", () => {
     console.log("Random Encrypt Many: ");
     console.log(encryptMany(manyTexts3.texts, manyTexts3.shifts));
+});
+
+// Test Show MSG Only
+test('Encrypt Show Msg Only ', () => {
+    expect(encryptShowMessageOnly(test1.text, test1.shift)).toStrictEqual({ msg: 'UMMB UM IB NQDM W KTWKS QV BPM JIKS' });
+    expect(encryptShowMessageOnly(test2.text, test2.shift)).toStrictEqual({ msg: 'F GGSZ YQ DEB CMIHCP NROZCQ' });
 });

@@ -1,6 +1,6 @@
 import { Caesar } from './cipher.js';
 
-export const encrypt = (text, shift) => {
+export const encrypt = (text, shift, msgOnly) => {
     const shifts = [];
     let multishift = false;
 
@@ -20,10 +20,10 @@ export const encrypt = (text, shift) => {
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
         }
-        return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
+        return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""], msgOnly);
     }
 
-    return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""]);
+    return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""], msgOnly);
 }
 
 export const encryptRandom = (text) => {
@@ -52,4 +52,8 @@ export const encryptMany = (texts, shifts) => {
         results.push(result);
     }
     return results;
+}
+
+export const encryptShowMessageOnly = (text, shift) => {
+    return encrypt(text, shift, true);
 }
