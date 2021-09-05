@@ -14,7 +14,6 @@ export const decrypt = (text, shift, numberIndexes) => {
     Caesar.checkIfShiftIsNotNumber(shift);
 
     if (shift.toString().includes(",")) {
-        multishift = true;
         const nums = shift.split(",");
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
@@ -33,3 +32,8 @@ export const decrypt = (text, shift, numberIndexes) => {
 
     return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
 }
+
+const Decrypter = {
+    decrypt: decrypt
+}
+export default Decrypter;

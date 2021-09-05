@@ -57,3 +57,12 @@ export const encryptMany = (texts, shifts) => {
 export const encryptShowMessageOnly = (text, shift) => {
     return encrypt(text, shift, true);
 }
+
+const Encrypter = {
+    encrypt: encrypt,
+    encryptMany: encryptMany,
+    encryptShowMessageOnly: encryptShowMessageOnly,
+    encryptRandom: encryptRandom,
+    encryptRandomMultiShift: encryptRandomMultiShift
+}
+export default Encrypter;

@@ -9,6 +9,11 @@
     "type": "git",
     "url": "https://github.com/KaipoJames/Caesar-Cipher-JS.git"
   },
+  "exports": {
+    ".": "./src/index.js",
+    "./encrypt": "./src/modules/encrypt.js",
+    "./decrypt": "./src/modules/decrypt.js"
+  },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },

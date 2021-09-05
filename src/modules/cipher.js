@@ -55,9 +55,9 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts,
             result.push(newData.newLetter);
         }
     });
+    
     lookForNumbersIfAny(type, result, numIndexes, numberIndexes);
     return getFinalResult(result.join(""), shift, multishift, shifts, numberIndexes, msgOnly);
-    
 }
 
 // Cipher helper functions (Not Exported)

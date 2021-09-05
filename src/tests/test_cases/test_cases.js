@@ -71,6 +71,12 @@ export const decryption_tests = {
         result: { msg: 'MY ADDRESS NUMBER CHANGED FROM 432 TO 434', shift: 3 }
     },
     test3: {
+        text: 'RFC AMBC GQ DEEB. BMLR QFYPC GR UGRF YLWMLC',
+        shift: 2,
+        indexes: [12, 13, 14, 15],
+        result: { msg: 'THE CODE IS 3441. DONT SHARE IT WITH ANYONE', shift: 2 }
+    },
+    test4: {
         text: "RD XJHZWJ RJXXFLJ",
         shift: "BRUTE FORCE",
         result: [
