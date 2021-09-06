@@ -107,5 +107,25 @@ export const decryption_tests = {
             { msg: 'PB VHFXUH PHVVDJH', shift: 24 },
             { msg: 'QC WIGYVI QIWWEKI', shift: 25 }
           ]
-    }
+    },
+    manyTexts1: {
+        texts: ["TLLA TL HA MPCL V JSVJR PU AOL IHJR", "P SPCL HA DEB OVSTLZ ZAYLLA", "KVUA AYBZA OPT HA HSS!"],
+        shifts: -7,
+        numIndexes: [[], [ 10, 11, 12 ], []],
+        result: [
+            { msg: 'MEET ME AT FIVE O CLOCK IN THE BACK', shift: -7, msgID: 1 },
+            { msg: 'I LIVE AT 341 HOLMES STREET', shift: -7, msgID: 2 },
+            { msg: 'DONT TRUST HIM AT ALL!', shift: -7, msgID: 3 }
+          ]
+    },
+    manyTexts2: {
+        texts: ["RJJY RJ FY KNAJ T HQTHP NS YMJ GFHP", "K NKXG CV DEB JQNOGU UVTGGV", "LWVB BZCAB PQU IB ITT!"],
+        shifts: [-5, -2, -8],
+        numIndexes: [[], [10, 11, 12], []],
+        result: [
+            { msg: 'MEET ME AT FIVE O CLOCK IN THE BACK', shift: -5, msgID: 1 },
+            { msg: 'I LIVE AT 341 HOLMES STREET', shift: -2, msgID: 2 },
+            { msg: 'DONT TRUST HIM AT ALL!', shift: -8, msgID: 3 }
+          ]
+    },
 }

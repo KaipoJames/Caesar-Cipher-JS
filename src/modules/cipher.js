@@ -30,6 +30,7 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts,
     result = [];
     let numberIndexes = [];
     let pos = -1;
+    //console.log(numIndexes);
     letters.map(l => {
         pos++;
         if (!isLetter(l) || l.trim() === '' || numIndexes.includes(pos))  { 
@@ -72,12 +73,8 @@ const lookForNumbersIfAny = (type, result, numIndexes) => {
 const getFinalResult = (msg, shift, multishift, shifts, numberIndexes, msgOnly) => {
     const toReturn = {};
     toReturn.msg = msg;
-    if (msgOnly === true) {
-        return toReturn;
-    }
-    if (numberIndexes.length > 0) {
-        toReturn.numIndexes = numberIndexes;
-    }
+    if (msgOnly === true) {return toReturn; }
+    if (numberIndexes.length > 0) { toReturn.numIndexes = numberIndexes; }
     multishift ? toReturn.shifts = shifts : toReturn.shift = shift;
     return toReturn;
 }

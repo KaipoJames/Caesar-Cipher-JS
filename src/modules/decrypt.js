@@ -33,7 +33,27 @@ export const decrypt = (text, shift, numberIndexes) => {
     return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
 }
 
+export const decryptMany = (texts, shifts, numIndexes) => {
+    if (!texts || texts.length < 1 || !shifts || shifts.length < 1) { return texts }
+    if (!Array.isArray(shifts) && Number.isInteger(shifts)) {
+        let tmp = shifts;
+        shifts = [];
+        for (let i = 0; i < texts.length; i++) {
+            shifts.push(tmp);
+        }
+    }
+    const results = [];
+    for (let i = 0; i < texts.length; i++) {
+        const result = decrypt(texts[i], shifts[i], numIndexes[i]);
+        result.msgID = i + 1;
+        results.push(result);
+    }
+    console.log(results);
+    return results;
+}
+
 const Decrypter = {
-    decrypt: decrypt
+    decrypt: decrypt,
+    decryptMany: decryptMany
 }
 export default Decrypter;

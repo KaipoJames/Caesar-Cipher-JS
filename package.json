@@ -15,7 +15,9 @@
     "./decrypt": "./src/modules/decrypt.js"
   },
   "scripts": {
-    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest",
+    "testEncrypt": "node --experimental-vm-modules node_modules/.bin/jest -- src/tests/encrypt.test.js",
+    "testDecrypt": "node --experimental-vm-modules node_modules/.bin/jest -- src/tests/decrypt.test.js"
   },
   "keywords": [],
   "author": "Kaipo Wilmeth <kaipojames12@gmail.com>",

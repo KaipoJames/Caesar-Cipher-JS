@@ -26,17 +26,17 @@ export const encrypt = (text, shift, msgOnly) => {
     return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "encryption", [""], msgOnly);
 }
 
-export const encryptRandom = (text) => {
+const encryptRandom = (text) => {
     const shift = Caesar.getRandomShift();
     return encrypt(text, shift);
 }
 
-export const encryptRandomMultiShift = (text, length) => {
+const encryptRandomMultiShift = (text, length) => {
     const shift = Caesar.getRandomMultiShift(length);
     return encrypt(text, shift);
 }
 
-export const encryptMany = (texts, shifts) => {
+const encryptMany = (texts, shifts) => {
     if (!texts || texts.length < 1 || !shifts || shifts.length < 1) { return texts }
     if (!Array.isArray(shifts) && Number.isInteger(shifts)) {
         let tmp = shifts;
@@ -54,7 +54,7 @@ export const encryptMany = (texts, shifts) => {
     return results;
 }
 
-export const encryptShowMessageOnly = (text, shift) => {
+const encryptShowMessageOnly = (text, shift) => {
     return encrypt(text, shift, true);
 }
 

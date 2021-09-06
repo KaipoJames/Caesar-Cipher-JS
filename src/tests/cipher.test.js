@@ -1,5 +1,4 @@
 import { getRandomMultiShift } from "../modules/cipher";
-import { encrypt } from "../modules/encrypt";
 
 test("Dispays A Random Multi-Shift: ", () => {
     const shifts = getRandomMultiShift(3);

@@ -1,12 +1,7 @@
-import { 
-    encrypt, 
-    encryptRandom, 
-    encryptRandomMultiShift ,
-    encryptMany,
-    encryptShowMessageOnly
-} from '../modules/encrypt.js';
+import Encrypter from '../modules/encrypt.js';
 import { encryption_tests as en } from './test_cases/test_cases.js'
 
+const { encrypt, encryptMany, encryptRandom, encryptRandomMultiShift, encryptShowMessageOnly } = Encrypter
 const { test1, test2, random, manyTexts1, manyTexts2, manyTexts3 } = en;
 const { singleShift, multiShift } = random;
 
