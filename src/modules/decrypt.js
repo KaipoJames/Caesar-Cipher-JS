@@ -1,6 +1,6 @@
 import { Caesar } from './cipher.js';
 
-export const decrypt = (text, shift, numberIndexes) => {
+export const decrypt = (text, shift, numberIndexes, msgOnly) => {
     const shifts = [];
     let multishift = false;
 
@@ -18,19 +18,19 @@ export const decrypt = (text, shift, numberIndexes) => {
         for (let i = 0; i < nums.length; i++) {
             shifts.push(parseInt(nums[i]));
         }
-        return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
+        return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes, msgOnly);
     }
 
     if (shift.toString() === 'BRUTE FORCE') {
         let possibilities = [];
         for (let i = 0; i < Caesar.alphabet.length; i++) {
-            const p = Caesar.getResult(letters, result, startingShiftPos, multishift, i, null, "decryption", numberIndexes);
+            const p = Caesar.getResult(letters, result, startingShiftPos, multishift, i, null, "decryption", numberIndexes, msgOnly);
             possibilities.push(p);
         }
         return possibilities;
     }
 
-    return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes);
+    return Caesar.getResult(letters, result, startingShiftPos, multishift, shift, shifts, "decryption", numberIndexes, msgOnly);
 }
 
 export const decryptMany = (texts, shifts, numIndexes) => {
@@ -52,8 +52,13 @@ export const decryptMany = (texts, shifts, numIndexes) => {
     return results;
 }
 
+const decryptShowMessageOnly = (text, shift, numberIndexes) => {
+    return decrypt(text, shift, numberIndexes, true);
+}
+
 const Decrypter = {
     decrypt: decrypt,
-    decryptMany: decryptMany
+    decryptMany: decryptMany,
+    decryptShowMessageOnly: decryptShowMessageOnly
 }
 export default Decrypter;

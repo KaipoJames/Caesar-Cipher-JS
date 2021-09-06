@@ -1,7 +1,7 @@
 import Decrypter from '../modules/decrypt.js'
 import { decryption_tests as de } from './test_cases/test_cases.js';
 
-const { decrypt, decryptMany } = Decrypter;
+const { decrypt, decryptMany, decryptShowMessageOnly } = Decrypter;
 const { test1, test2, test3, test4, manyTexts1, manyTexts2 } = de;
 
 // <-- TESTS -->
