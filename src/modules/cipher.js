@@ -30,7 +30,6 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts,
     result = [];
     let numberIndexes = [];
     let pos = -1;
-    //console.log(numIndexes);
     letters.map(l => {
         pos++;
         if (!isLetter(l) || l.trim() === '' || numIndexes.includes(pos))  { 
