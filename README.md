@@ -79,10 +79,12 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
   - NOTE: These methods are properties of the 'Cipher' object. You must import the entire library to use these new functions.
 
 ### Running Tests
- - run ``` npm install ``` to install project dependencies.
- - run ``` npm run test ``` to execute all tests.
- - run ``` npm run testEncrypt ``` to execute all encryption tests.
- - run ``` npm run testDecrypt ``` to execute all decryption tests.
+ - This library uses 'JEST' for unit testing.
+ - first, run ``` npm install ``` to install project dependencies.
+ - Then you can start testing.
+   - run ``` npm run test ``` to execute all tests.
+   - run ``` npm run testEncrypt ``` to execute all encryption tests.
+   - run ``` npm run testDecrypt ``` to execute all decryption tests.
 
 
 ## Documentation 
