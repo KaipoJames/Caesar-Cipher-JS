@@ -1,6 +1,6 @@
-import { getRandomMultiShift } from "../modules/cipher";
+import { Caesar } from "../modules/cipher";
 
 test("Dispays A Random Multi-Shift: ", () => {
-    const shifts = getRandomMultiShift(3);
+    const shifts = Caesar.getRandomMultiShift(3);
     expect(shifts).toBe(shifts);
 });

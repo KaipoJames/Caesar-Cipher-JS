@@ -1,15 +1,14 @@
-// EXPORTED FUNCTIONS
 const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
-export const checkForEmptyShift = (shift, text) => {
+const checkForEmptyShift = (shift, text) => {
     if (!shift || shift === 0) { return text } 
 }
 
-export const getRandomShift = () => {
+const getRandomShift = () => {
     return Math.floor(Math.random() * 25);
 }
 
-export const getRandomMultiShift = (length) => {
+const getRandomMultiShift = (length) => {
     if (Number.isInteger(length) && length > 1 && length !== null) {
         let shifts = "";
         for (let i = 0; i < length; i++) {
@@ -60,7 +59,7 @@ const getResult = (letters, result, startingShiftPos, multishift, shift, shifts,
     return getFinalResult(result.join(""), shift, multishift, shifts, numberIndexes, msgOnly);
 }
 
-// Cipher helper functions (Not Exported)
+// Helper Functions
 const lookForNumbersIfAny = (type, result, numIndexes) => {
     if (type === "decryption") {
         for (let i = 0; i < numIndexes.length; i++) {
@@ -78,17 +77,17 @@ const getFinalResult = (msg, shift, multishift, shifts, numberIndexes, msgOnly) 
     return toReturn;
 }
 
-export const shiftLetter = (letter, shift) => {
+const shiftLetter = (letter, shift) => {
     const alphabetPos = alphabet.indexOf(letter);
     const newPos = isNegative(shift) ? decrement(alphabetPos, shift) : increment(alphabetPos, shift);
     const newLetter = alphabet[newPos];
     return { newPos: newPos, newLetter: newLetter };
 }
 
-export const isLetter = (str) => {
+const isLetter = (str) => {
     return str.length === 1 && str.match(/[a-z]/i);
 }
-export const isNegative = (num) => {
+const isNegative = (num) => {
     return num < 0 ? true : false;
 }
 
