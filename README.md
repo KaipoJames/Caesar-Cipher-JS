@@ -76,10 +76,13 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
     - checkForEmptyShift(shift, text) returns text if there is no shift.
     - isLetter(input) returns true if input is a letter, otherwise returns false.
     - isNegative(input) returns true if input is a negative number, else: false.
+  - NOTE: These methods are properties of the 'Cipher' object. You must import the entire library to use these new functions.
 
 ### Running Tests
  - run ``` npm install ``` to install project dependencies.
  - run ``` npm run test ``` to execute all tests.
+ - run ``` npm run testEncrypt ``` to execute all encryption tests.
+ - run ``` npm run testDecrypt ``` to execute all decryption tests.
 
 
 ## Documentation 
@@ -102,7 +105,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
 ## Author & License
 
 ### Author
- - Kaipo Wilmeth
+ - Kaipo Wilmeth(KaipoJames)
 
 ### Copyright and License
  - [MIT License](LICENSE.txt)
