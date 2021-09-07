@@ -1,5 +1,4 @@
 import { Caesar } from './cipher.js';
-import Mailer from '../email/email.js';
 
 export const decrypt = (text, shift, numberIndexes, msgOnly) => {
     const shifts = [];
@@ -57,12 +56,6 @@ export const decryptMany = (texts, shifts, numIndexes) => {
 const decryptShowMessageOnly = (text, shift, numberIndexes) => {
     return decrypt(text, shift, numberIndexes, true);
 }
-
-//console.log(decrypt("XOKW PU EU DEC GQHKP AGWA", "-4,-7,-2", [11, 12, 13]));
-
-//Mailer.sendDecryptionAll("kaiposemail@yahoo.com", "kaipojames12@gmail.com", decrypt("XOKW PU EU DEC GQHKP AGWA", "-4, -7, -2", [11, 12, 13]));
-//Mailer.sendDecryptionKeys("kaiposemail@yahoo.com", "kaipojames12@gmail.com", decrypt("XOKW PU EU DEC GQHKP AGWA", "-4, -7, -2", [11, 12, 13]));
-//Mailer.sendDecryptionMessage("kaiposemail@yahoo.com", "kaipojames12@gmail.com", decrypt("XOKW PU EU DEC GQHKP AGWA", "-4, -7, -2", [11, 12, 13]));
 
 const Decrypter = {
     decrypt: decrypt,
