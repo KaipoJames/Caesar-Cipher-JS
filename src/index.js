@@ -1,6 +1,7 @@
 import { Caesar } from './modules/cipher.js';
 import Encrypter, { encrypt } from './modules/encrypt.js';
 import Decrypter, { decrypt } from './modules/decrypt.js';
+import Mailer from './email/email.js';
 
 const { 
     getRandomShift ,
@@ -12,6 +13,7 @@ const {
 
 // Global Object - Contains All Functions
 export const Cipher = { 
+    Mailer: Mailer,
     Encrypter: Encrypter,
     Decrypter: Decrypter,
     encrypt: encrypt,

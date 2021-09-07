@@ -1,4 +1,5 @@
 import { Caesar } from './cipher.js';
+import Mailer from '../email/email.js';
 
 export const encrypt = (text, shift, msgOnly) => {
     const shifts = [];
@@ -57,6 +58,10 @@ const encryptMany = (texts, shifts) => {
 const encryptShowMessageOnly = (text, shift) => {
     return encrypt(text, shift, true);
 }
+
+//Mailer.sendEncryptionAll("kaiposemail@yahoo.com", "kaipojames12@gmail.com", encrypt("This Is An 342 Email test", "4, 7, 2"));
+//Mailer.sendEncryptionKeys("kaiposemail@yahoo.com", "kaipojames12@gmail.com", encrypt("This Is An 342 Email test", "4, 7, 2"));
+//Mailer.sendEncryptionMessage("kaiposemail@yahoo.com", "kaipojames12@gmail.com", encrypt("This Is An 342 Email test", "4, 7, 2"));
 
 const Encrypter = {
     encrypt: encrypt,
