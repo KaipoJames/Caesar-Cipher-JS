@@ -1,22 +1,56 @@
 import nodemailer from 'nodemailer';
+import pkg from "googleapis";
+const { google } = pkg;
+const OAuth2 = google.auth.OAuth2;
 import dotenv from 'dotenv';
 dotenv.config();
 
 const Mailer = {
-    getTransport(service, user, password) { // Create Transport Object
+    getCredentialsTransport(service, user, password) { // Create Transport Object
         return nodemailer.createTransport({
-            service: "Gmail",
+            service: service,
             auth: {
-                user: process.env.GMAIL,
-                pass: process.env.PASSWORD
+                user: user,
+                pass: password
             }
         });
     },
 
-    createTransport() { // IN PROGRESS. User can create their own transport if DNE.
-        // TODO
-        const transport = '';
-        return transport
+    async createTransporterObj() {
+        const oauth2Client = new OAuth2(
+            process.env.CLIENT_ID,
+            process.env.CLIENT_SECRET,
+            "https://developers.google.com/oauthplayground"
+        );
+
+        oauth2Client.setCredentials({
+            refresh_token: process.env.REFRESH_TOKEN
+        });
+        
+        const accessToken = await new Promise((resolve, reject) => {
+            oauth2Client.getAccessToken((err, token) => {
+                if (err) {
+                reject("Failed to create access token :(\n Check your ENV Variables");
+                }
+                resolve(token);
+            }); 
+        });
+
+        const transporter = nodemailer.createTransport({
+            service: "gmail",
+            auth: {
+                type: "OAuth2",
+                user: process.env.GMAIL,
+                accessToken: accessToken,
+                clientId: process.env.CLIENT_ID,
+                clientSecret: process.env.CLIENT_SECRET,
+                refreshToken: process.env.REFRESH_TOKEN
+            },
+            tls: {
+                rejectUnauthorized: false
+            }
+        });
+        return transporter;
     },
     
     getMsgOptions(sender, recipient, type, data, constraint) { // Set Up Message Options
@@ -90,11 +124,18 @@ const Mailer = {
         return this.sendMailAttempt(msgOptions);
     },
 
-    sendMailAttempt(msgOptions) {
-        const TP = this.getTransport();
-        return TP.sendMail(msgOptions) ? "Message Sent Successfully" : "Message Sending Failed";
+    // sendMailAttempt(msgOptions) {
+    //     const TP = this.getTransport();
+    //     return TP.sendMail(msgOptions) ? "Message Sent Successfully" : "Message Sending Failed";
+    // }
+    async sendMailAttempt(msgOptions) {
+        try {      
+            const TP = await this.createTransporterObj();
+            return await TP.sendMail(msgOptions) ? "Message Sent Successfully" : "Message Sending Failed";
+        } catch (error) {
+            console.error(error);
+        }
     }
-
 }
 
 export default Mailer;

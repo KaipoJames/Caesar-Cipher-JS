@@ -1,4 +1,5 @@
 import { Caesar } from './cipher.js';
+import Mailer from '../email/email.js';
 
 export const encrypt = (text, shift, msgOnly) => {
     const shifts = [];
