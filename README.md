@@ -80,7 +80,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
 
 ### Running Tests
  - This library uses 'JEST' for unit testing.
- - first, run ``` npm install ``` to install project dependencies.
+ - first, run ``` npm install ``` to install all dependencies or run ``` npm install jest ``` to install only the jest dependency.
  - Then you can start testing.
    - run ``` npm run test ``` to execute all tests.
    - run ``` npm run testEncrypt ``` to execute all encryption tests.
@@ -88,6 +88,8 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
 
 
 ## Documentation 
+   - [User Docs](docs/USER_DOCS.md) - For General Information on how to use this package and its features.
+   - [Dev Docs](docs/DEV_DOCS.md) - For developers, contributers, and others. Technical Information explaining features, codebase, etc. in depth.
 
 ### Version History
  - see [CHANGELOG](https://github.com/KaipoJames/Caesar-Cipher-JS/blob/master/CHANGELOG.md)
@@ -102,6 +104,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
  - I would love if you would like to contribute to the project! Feel free to fork this repo and propose your changes!
  - Any great ideas about adding new encryption algorithms are greatly encouraged! 
  - See the 'Future Works' section above for some ideas.
+ - It also may be beneficial to check out the [Dev Docs](docs/DEV_DOCS.md).
 
 
 ## Author & License
