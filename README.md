@@ -101,7 +101,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
   - Create Documentation explaining technical features, code architecture of the project, and other code-based information.
 
 ## Contributing
- - I would love if you would like to contribute to the project! Feel free to fork this repo and propose your changes!
+ - I would love if you would contribute to the project! Feel free to fork this repo and propose your changes!
  - Any great ideas about adding new encryption algorithms are greatly encouraged! 
  - See the 'Future Works' section above for some ideas.
  - It also may be beneficial to check out the [Dev Docs](docs/DEV_DOCS.md).
@@ -110,8 +110,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
 ## Author & License
 
 ### Author
- - Kaipo Wilmeth(KaipoJames)
+ - KaipoJames
 
 ### Copyright and License
  - [MIT License](LICENSE.txt)
-
