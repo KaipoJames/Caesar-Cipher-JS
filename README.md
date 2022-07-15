@@ -8,7 +8,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
 ## Installation
  - Install with [npm](https://www.npmjs.com/): ``` npm install caeser-cipher-js ```
  - Clone the repo: ``` git clone git@github.com:KaipoJames/Caesar-Cipher-Encrypt-And-Decrypt.git ```
- - Download Project as [ZIP-FILE](https://github.com/KaipoJames/Caesar-Cipher-JS/archive/refs/heads/master.zip)
+ - Download Project as [ZIP-FILE](https://github.com/razznblue/Caesar-Cipher-JS/archive/refs/heads/master.zip)
 
 ## Getting Started
 
@@ -110,7 +110,7 @@ Learn more about [Caesar Ciphers](https://www.sciencedirect.com/topics/computer-
 ## Author & License
 
 ### Author
- - KaipoJames
+ - RazzNBlue
 
 ### Copyright and License
  - [MIT License](LICENSE.txt)
